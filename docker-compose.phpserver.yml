@@ -1,0 +1,21 @@
+services:
+  db:
+    image: ${PHPSERVER_DB_IMAGE}:${PHPSERVER_DB_TAG}
+    volumes:
+      - mysql:/var/lib/mysql
+    restart: on-failure:5
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+      - MYSQL_DATABASE=magento
+    ports:
+      - 3306:3306  
+  es:
+    image: ${PHPSERVER_ES_IMAGE}:${PHPSERVER_ES_TAG}
+    restart: on-failure:5
+    environment:
+      - discovery.type=single-node
+    ports:
+      - 9200:9200
+volumes:
+  payload:
+  mysql:

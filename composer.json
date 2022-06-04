@@ -1,0 +1,18 @@
+{
+    "name": "superterran/magento-phpserver",
+    "description": "A component that provides some useful features for local development",
+    "type": "magento2-module",
+    "license": [
+      "OSL-3.0",
+      "AFL-3.0"
+    ],
+    "require": {
+      "php": "*"
+    },
+   "autoload": {
+    "files": [ "registration.php" ],
+    "psr-4": {
+      "Superterran\\PhpServer\\": ""
+    }
+  }
+}
